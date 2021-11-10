@@ -8,7 +8,19 @@
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
+        {% block header %}
+            <nav>
+                <ul>
+                    <li><a href="{{ path('home' )}}">Accueil</a></li>
+                    <li><a href="{{ path('blog' )}}">Blog</a></li>
+                    <li><a href="{{ path('contact' )}}">Contact</a></li>
+                    <li><a href="{{ path('contact', {city : 'montpellier'}) }}">Contactez Montpellier</a></li>
+                    <li><a href="{{ path('contact', {customerName: "killian"}) }}">Contactez de la part de Killian</a></li>
+                    <li><a href="{{ path('contact', {city : 'montpellier', customerName: "Killian"}) }}">Contactez Monpellier de la part de Killian</a></li>
+                </ul>
+            </nav>
 
+        {% endblock %}
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}

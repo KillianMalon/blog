@@ -14,11 +14,12 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, string $city = ""): Response
     {
-        $name = $request->query->get('name');
+        $customerName = $request->get('customerName');
+
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',
             'city'=>$city,
-            'name'=>$name
+            'customerName'=>$customerName,
         ]);
     }
 }
